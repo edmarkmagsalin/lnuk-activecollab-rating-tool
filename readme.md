@@ -59,6 +59,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## codes
 ```
+ssh-keygen -t rsa -b 4096 -C "ejmagsalin@straightarrow.com.ph"
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; 
+
 php artisan module:make Blog
 
 php artisan module:make-model Blog Blog
@@ -66,4 +70,6 @@ php artisan module:make-model Blog Blog
 php artisan module:make-migration create_blog_table Blog
 
 php artisan module:migrate Blog
+
+php artisan make:controller ActiveCollabController
 ```
