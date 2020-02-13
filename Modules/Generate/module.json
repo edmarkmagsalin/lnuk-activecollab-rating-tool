@@ -1,0 +1,13 @@
+{
+    "name": "Generate",
+    "alias": "generate",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Generate\\Providers\\GenerateServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

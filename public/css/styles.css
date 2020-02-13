@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Poiret+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.container {
+    max-width: 1170px;
+    overflow: hidden;
+    padding: 0 1rem;
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.bg-gray {
+    background-color: #E9EDF2;
+}
+
+.bg-blue {
+    background-color: #06427D;
+}
+
+.round-img {
+    border-radius: 50%;
+}
+
+.login-form-container {
+    padding: 30px;
+    background: #FFF;
+    width: 100%;
+    max-width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+form {
+    margin: 20px auto 0px auto;
+    z-index: 9999;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+    font-family: 'Poiret One', cursive;
+    color: #459DF6;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+form input{
+    width: 100%;
+    border-radius: 0px;
+    background: rgb(255, 255, 255);
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.btn {
+    margin-top: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 500ms ease;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: #459DF6;
+}
+
+.btn-google {
+    background-color: ;
+}
+
+.btn:hover {
+    background-color: #07539E;
+}
