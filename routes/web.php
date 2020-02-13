@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ac', 'ActiveCollabController@index');
+Route::get('/projects', 'ActiveCollabController@projects');
+Route::get('/tasks', 'ActiveCollabController@tasks');
