@@ -4,27 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use \ActiveCollab\SDK\Authenticator\Cloud;
-
 class ActiveCollabController extends Controller
 {
     public function projects() {
-        $authenticator = new Cloud('ACME Inc', 'My Awesome Application', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
+        $authenticator = new \ActiveCollab\SDK\Authenticator\Cloud('StraightArrow Corporation', 'ActiveCollab Rating Tool', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
         
-        $accounts = $authenticator->getAccounts();
-        $accountID = null;
-        foreach($accounts as $accountID=>$account) {
-            $accountID = $accountID;
-        }
-        
-        // Issue a token for account #123456789.
-        $token = $authenticator->issueToken($accountID);
+        // Assign the account ID
+        $accountID = key($authenticator->getAccounts());
+        // dd($accountID); // 176953
 
-        // Did we get it?
+        // Issue a token for account ID
+        $token = $authenticator->issueToken($accountID);
+        // dd($token); // 159-nEBWWWm4zspGWBuKXDXuRItyPQWtqF7Y7ISZU59F (dynamic??)
+        
+        // Did we get what we asked for?
         if ($token instanceof \ActiveCollab\SDK\TokenInterface) {
-            // print $token->getUrl() . "\n";
-            // print $token->getToken() . "\n";
+
+            // Construct client
             $client = new \ActiveCollab\SDK\Client($token);
+            // dd($client); // Client Object containing token and url
+
+
+
+            
             // $projects = $client->get('projects')->getJson();
 
             // $tasks = [];
@@ -37,7 +39,7 @@ class ActiveCollabController extends Controller
             //     dd($task);
             // }
 
-            $projects = $client->get('projects/');
+            $projects = $client->get('projects/names');
 
             dd($projects);
             
@@ -49,7 +51,7 @@ class ActiveCollabController extends Controller
         
     }
     public function tasks() {
-        $authenticator = new Cloud('ACME Inc', 'My Awesome Application', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
+        $authenticator = new \ActiveCollab\SDK\Authenticator\Cloud('StraightArrow Corporation', 'ActiveCollab Rating Tool', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
         
         $accounts = $authenticator->getAccounts();
         $accountID = null;
