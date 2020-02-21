@@ -8,7 +8,7 @@ class ActiveCollabController extends Controller
 {
     public function projects() {
         $authenticator = new \ActiveCollab\SDK\Authenticator\Cloud('StraightArrow Corporation', 'ActiveCollab Rating Tool', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
-        
+
         // Assign the account ID
         $accountID = key($authenticator->getAccounts());
         // dd($accountID); // 176953
@@ -16,7 +16,7 @@ class ActiveCollabController extends Controller
         // Issue a token for account ID
         $token = $authenticator->issueToken($accountID);
         // dd($token); // 159-nEBWWWm4zspGWBuKXDXuRItyPQWtqF7Y7ISZU59F (dynamic??)
-        
+
         // Did we get what we asked for?
         if ($token instanceof \ActiveCollab\SDK\TokenInterface) {
 
@@ -26,7 +26,7 @@ class ActiveCollabController extends Controller
 
 
 
-            
+
             // $projects = $client->get('projects')->getJson();
 
             // $tasks = [];
@@ -41,24 +41,26 @@ class ActiveCollabController extends Controller
 
             $projects = $client->get('projects/names');
 
+            // $projects->
+
             dd($projects);
-            
+
         } else {
             print "Invalid response\n";
             die();
         }
 
-        
+
     }
     public function tasks() {
         $authenticator = new \ActiveCollab\SDK\Authenticator\Cloud('StraightArrow Corporation', 'ActiveCollab Rating Tool', 'ejmagsalin@straightarrow.com.ph', 'SACmaestro.0229');
-        
+
         $accounts = $authenticator->getAccounts();
         $accountID = null;
         foreach($accounts as $accountID=>$account) {
             $accountID = $accountID;
         }
-        
+
         // Issue a token for account #123456789.
         $token = $authenticator->issueToken($accountID);
 
@@ -72,6 +74,6 @@ class ActiveCollabController extends Controller
             die();
         }
 
-        
+
     }
 }
